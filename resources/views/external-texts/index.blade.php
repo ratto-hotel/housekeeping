@@ -17,7 +17,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($text as $texts)
+                        @foreach ($texts as $text)
                             <tr>
                                 <td>{{ $text->key }}</td>
                                 <td>{{ $text->value }}</td>
