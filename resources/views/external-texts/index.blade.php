@@ -5,7 +5,8 @@
         <h3 class="text-dark mb-4">{{ __('Manage external texts') }}</h3>
 
         <div class="row mb-4">
-            <div class="ml-2" data-toggle="tooltip" data-placement="top" title="You can search for multiple instances of each search criteria by comma seperating them. Eg. if you select page IDs you can enter the following 1,2,3,4,5">
+            <div class="ml-2" data-toggle="tooltip" data-placement="top"
+                 title="You can search for multiple instances of each search criteria by comma seperating them. Eg. if you select page IDs you can enter the following 1,2,3,4,5">
                 <i class="far fa-question-circle"></i>
             </div>
 
@@ -21,7 +22,8 @@
 
                         <div class="input-group col-12 col-lg-10">
                             <div class="form-outline">
-                                <input style="width: 300px;" type="search" name="criteria" placeholder="Enter your search criteria" class="form-control">
+                                <input style="width: 300px;" type="search" name="criteria"
+                                       placeholder="Enter your search criteria" class="form-control">
                             </div>
 
                             <button type="submit" class="ml-2 btn btn-primary">
@@ -56,21 +58,24 @@
                                 <td>{{ $text->key }}</td>
                                 <td>{{ $text->value }}</td>
                                 <td>
-                                    <a href="{{route('external-texts.edit', $text)}}">
-                                        <x-elements.primary-button tooltip-text="{{ __('Edit text') }}">
-                                            <i class="fas fa-edit"></i>
-                                        </x-elements.primary-button>
-                                    </a>
-                                    <form class="ml-2" action="{{ route('external-texts.delete', $text) }}"
-                                          method="POST" onSubmit='confirmDelete("confirmBadgeDelete");'
-                                          onSubmit="return confirm('{{ __('Are you sure you want to delete this badge?') }}');">
-                                        @method('DELETE')
-                                        @csrf
+                                    <div class="btn-group" role="group">
 
-                                        <x-elements.danger-button tooltip-text="{{ __('Delete text') }}">
-                                            <i class="fas fa-trash"></i>
-                                        </x-elements.danger-button>
-                                    </form>
+                                        <a href="{{route('external-texts.edit', $text)}}">
+                                            <x-elements.primary-button tooltip-text="{{ __('Edit text') }}">
+                                                <i class="fas fa-edit"></i>
+                                            </x-elements.primary-button>
+                                        </a>
+                                        <form class="ml-2" action="{{ route('external-texts.delete', $text) }}"
+                                              method="POST" onSubmit='confirmDelete("confirmBadgeDelete");'
+                                              onSubmit="return confirm('{{ __('Are you sure you want to delete this badge?') }}');">
+                                            @method('DELETE')
+                                            @csrf
+
+                                            <x-elements.danger-button tooltip-text="{{ __('Delete text') }}">
+                                                <i class="fas fa-trash"></i>
+                                            </x-elements.danger-button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
