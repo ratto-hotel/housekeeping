@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="row">
-                    {{ $badges->links() }}
+                    {{ $texts->links() }}
                 </div>
             </div>
         </div>
