@@ -1,5 +1,5 @@
 <x-layout.app>
-    @push('title', 'Create article')
+    @push('title', 'Edit catalog page')
 
     <div class="container-fluid">
         <h3 class="text-dark mb-4">{{ __('Edit catalog page') }}</h3>
@@ -25,7 +25,16 @@
                                                     <strong>{{ __('Parent Id') }}</strong>
                                                 </label>
 
-                                                <x-form.input name="parent_id" type="number" value="{{ $page->parent_id }}" placeholder="{{ __('Enter a parent_id') }}"/>
+                                                <select name="parent_id" id="parent_id" class="form-control" value="{{ $page->parent_id }}">
+                                                    <option value="-1" @selected($page->parent_id == -1)>
+                                                        {{ __('No parent') }}
+                                                    </option>
+                                                    @foreach($pages as $key => $value)
+                                                        <option value="{{ $key }}" @selected($page->parent_id == $key)>
+                                                            {{ $value }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
 

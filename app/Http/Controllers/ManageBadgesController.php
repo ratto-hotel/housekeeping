@@ -32,7 +32,7 @@ class ManageBadgesController extends Controller
 
     public function create(Request $request){
         $request->validate([
-            'image' => 'required|image|mimes:png,gif|max:2048|dimensions:width=40,height=40'
+            'image' => 'required|image|mimes:gif|max:2048|dimensions:width=40,height=40'
         ]);
         $path = $request->file('image')->store('', 'badges');
         WebsiteBadge::query()->create([

@@ -49,8 +49,13 @@ class CatalogPagesController extends Controller
 
     public function edit(CatalogPage $catalogPage)
     {
+        $parentPages = CatalogPage::where('parent_id', '!=', $catalogPage->id)
+            ->orderBY('caption', 'ASC')
+            ->pluck('caption', 'id')
+            ->all();
         return view('catalog.pages.edit', [
-            'page' => $catalogPage
+            'page' => $catalogPage,
+            'pages' => $parentPages
         ]);
     }
 

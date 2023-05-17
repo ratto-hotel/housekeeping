@@ -8,7 +8,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col mr-2">
                             <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
-                                <span>users registered</span>
+                                <span>{{__('users registered')}}</span>
                             </div>
                             <div class="text-dark font-weight-bold h5 mb-0">
                                 <span>{{ DB::table('users')->count() }}</span>

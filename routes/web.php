@@ -9,6 +9,7 @@ use App\Http\Controllers\ChatlogsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmulatorSettingsController;
 use App\Http\Controllers\EmulatorTextsController;
+use App\Http\Controllers\ExternalTextsController;
 use App\Http\Controllers\PrivateChatlogsController;
 use App\Http\Controllers\StaffApplicationsController;
 use App\Http\Controllers\UserController;
@@ -69,6 +70,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/', [ManageBadgesController::class, 'create'])->name('manage-badges.create');
         Route::put('/{badge}/accept', [ManageBadgesController::class, 'accept'])->name('manage-badges.accept');
         Route::delete('/{badge}/delete', [ManageBadgesController::class, 'delete'])->name('manage-badges.delete');
+    });
+
+    Route::prefix('external-texts')->group(function(){
+        Route::get('/', [ExternalTextsController::class, 'index'])->name('external-texts.index');
+        Route::post('/create', [ExternalTextsController::class, 'create'])->name('external-texts.create');
+        Route::get('/{externalText}', [ExternalTextsController::class, 'edit'])->name('external-texts.accept');
+        Route::put('/{externalText}', [ExternalTextsController::class, 'update'])->name('external-texts.accept');
+        Route::delete('/{externalText}/delete', [ExternalTextsController::class, 'delete'])->name('external-texts.delete');
     });
 
     // Wordfilter management
