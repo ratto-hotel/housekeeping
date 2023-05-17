@@ -37,20 +37,20 @@
                 <x-navigation.navigation-item :classes="request()->routeIs('dashboard') ? 'active' : ''">
                     <a href="{{ route('dashboard') }}">
                         <x-icons.home-icon/>
-                        <span>Dashboard</span>
+                        <span>{{__('Dashboard')}}</span>
                     </a>
                 </x-navigation.navigation-item>
 
                 <x-navigation.navigation-section>
                     <x-slot:header>
-                        Hotel
+                        {{__('Hotel')}}
                     </x-slot:header>
 
                     @if (hasPermission('edit_user'))
                         <x-navigation.navigation-item :classes="request()->routeIs('users.*') ? 'active' : ''">
                             <a href="{{ route('users.index') }}">
                                 <x-icons.users-icon/>
-                                <span>User Management</span>
+                                <span>{{__('User Management')}}</span>
                             </a>
                         </x-navigation.navigation-item>
                     @endif
@@ -59,7 +59,7 @@
                         <x-navigation.navigation-item :classes="request()->routeIs('wordfilter.*') ? 'active' : ''">
                             <a href="{{ route('wordfilter.index') }}">
                                 <x-icons.wordfilter-icon/>
-                                <span>Wordfilter Management</span>
+                                <span>{{__('Wordfilter Management')}}</span>
                             </a>
                         </x-navigation.navigation-item>
                     @endif
@@ -68,7 +68,7 @@
                         <x-navigation.navigation-item :classes="request()->routeIs('bans.*') ? 'active' : ''">
                             <a href="{{ route('bans.index') }}">
                                 <x-icons.denied-icon/>
-                                <span>Ban Management</span>
+                                <span>{{__('Ban Management')}}</span>
                             </a>
                         </x-navigation.navigation-item>
                     @endif
@@ -80,7 +80,7 @@
                             :classes="request()->routeIs('staff-applications.*') ? 'active' : ''">
                             <a href="{{ route('staff-applications.index') }}">
                                 <x-icons.document-icon/>
-                                <span>Staff Applications</span>
+                                <span>{{__('Staff Applications')}}</span>
                             </a>
                         </x-navigation.navigation-item>
                     @endif
@@ -89,13 +89,13 @@
                         <x-navigation.dropdown-menu :classes="request()->routeIs('articles.*') ? 'active' : ''">
                             <x-slot:parent>
                                 <x-icons.chat-icon/>
-                                <span>Chatlogs</span>
+                                <span>{{__('Chatlogs')}}</span>
                             </x-slot:parent>
 
                             @if (hasPermission('manage_room_chatlogs'))
                                 <x-navigation.dropdown-child>
                                     <a href="{{ route('chatlogs.room') }}">
-                                        Room chatlogs
+                                        {{__('Room chatlogs')}}
                                     </a>
                                 </x-navigation.dropdown-child>
                             @endif
@@ -103,7 +103,7 @@
                             @if (hasPermission('manage_private_chatlogs'))
                                 <x-navigation.dropdown-child>
                                     <a href="{{ route('chatlogs.private') }}">
-                                        Private chatlogs
+                                        {{__('Private chatlogs')}}
                                     </a>
                                 </x-navigation.dropdown-child>
                             @endif
@@ -137,7 +137,7 @@
                         hasPermission('write_article'))
                     <x-navigation.navigation-section>
                         <x-slot:header>
-                            CMS
+                            {{__('CMS')}}
                         </x-slot:header>
 
                         @if (hasPermission('manage_website_settings') && hasTable('website_settings') && config('habbo.core.using_atom_cms'))
@@ -178,18 +178,18 @@
                             <x-navigation.dropdown-menu :classes="request()->routeIs('articles.*') ? 'active' : ''">
                                 <x-slot:parent>
                                     <x-icons.article-icon/>
-                                    <span>Article management</span>
+                                    <span>{{__('Article management')}}</span>
                                 </x-slot:parent>
 
                                 <x-navigation.dropdown-child>
                                     <a href="{{ route('articles.index') }}">
-                                        All Articles
+                                        {{_('All Articles')}}
                                     </a>
                                 </x-navigation.dropdown-child>
 
                                 <x-navigation.dropdown-child>
                                     <a href="{{ route('articles.create') }}">
-                                        Create Article
+                                        {{__('Create Article')}}
                                     </a>
                                 </x-navigation.dropdown-child>
                             </x-navigation.dropdown-menu>
@@ -200,13 +200,13 @@
                 @if (hasPermission('manage_catalog_pages'))
                     <x-navigation.navigation-section>
                         <x-slot:header>
-                            Catalog
+                            {{__('Catalog')}}
                         </x-slot:header>
 
                         <x-navigation.navigation-item :classes="request()->routeIs('catalog.*') ? 'active' : ''">
                             <a href="{{ route('catalog-pages.index') }}">
                                 <x-icons.table-icon/>
-                                <span>Catalog pages</span>
+                                <span>{{__('Catalog pages')}}</span>
                             </a>
                         </x-navigation.navigation-item>
                     </x-navigation.navigation-section>
@@ -223,7 +223,7 @@
                                 :classes="request()->routeIs('emulator-settings.*') ? 'active' : ''">
                                 <a href="{{ route('emulator-settings.index') }}">
                                     <x-icons.settings-icon/>
-                                    <span>Emulator Settings</span>
+                                    <span>{{__('Emulator Settings')}}</span>
                                 </a>
                             </x-navigation.navigation-item>
                         @endif
@@ -233,7 +233,7 @@
                                 :classes="request()->routeIs('emulator-texts.*') ? 'active' : ''">
                                 <a href="{{ route('emulator-texts.index') }}">
                                     <x-icons.text-icon/>
-                                    <span>Emulator Text</span>
+                                    <span>{{__('Emulator Text')}}</span>
                                 </a>
                             </x-navigation.navigation-item>
                         @endif
@@ -253,13 +253,13 @@
                 @if (hasPermission('view_activity_logs'))
                     <x-navigation.navigation-section>
                         <x-slot:header>
-                            Miscellaneous
+                            {{__('Miscellaneous')}}
                         </x-slot:header>
 
                         <x-navigation.navigation-item :classes="request()->routeIs('miscellaneous.*') ? 'active' : ''">
                             <a href="{{ route('activity-logs.index') }}">
                                 <x-icons.text-icon/>
-                                <span>Activity Logs</span>
+                                <span>{{__('Activity Logs')}}</span>
                             </a>
                         </x-navigation.navigation-item>
                     </x-navigation.navigation-section>
@@ -304,7 +304,7 @@
                                       action="{{ route('users.search') }}">
                                     <div class="input-group">
                                         <input class="bg-light form-control border-0 small" type="text"
-                                               placeholder="Search for a username">
+                                               placeholder="{{__('Search for a username')}}">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary py-0" type="submit">
                                                 <i class="fas fa-search"></i>
