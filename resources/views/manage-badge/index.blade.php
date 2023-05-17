@@ -55,8 +55,10 @@
                                         <img
                                             src="https://www.rattohotel.com/swf/c_images/Album1584/{{ $badge->badge_imaging }}"
                                             height="32" width="32"/>
-                                        <x-form.input name="badge-code" disabled="1"
-                                                      value="{{ str_replace('.gif', '',$badge->badge_imaging) }}"/>
+                                        @if ($badge->status === 'accept')
+                                            <x-form.input name="badge-code" disabled="1"
+                                                          value="{{ str_replace('.gif', '',$badge->badge_imaging) }}"/>
+                                        @endif
                                     </div>
                                 </td>
                                 <td>{{ __('badge_status.' . $badge->status) }}</td>
