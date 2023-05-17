@@ -21,7 +21,7 @@ class ExternalTextsController extends Controller
     {
         return view('external-texts.edit', [
             'text' => $externalText
-        ])->withInput();
+        ]);
     }
 
     public function store(ExternalText $externalText, Request $request)
