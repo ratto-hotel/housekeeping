@@ -38,7 +38,7 @@
         <x-messages.flash-messages/>
 
         <div class="card shadow">
-            <div class="card-header py-3">
+            <div class="card-header py-3 d-flex justify-content-between">
                 <p class="text-primary m-0 font-weight-bold">{{ __('External texts') }}</p>
                 <a href="{{ route('external-texts.create') }}" class="font-weight-bold">
                     {{__('Create text')}}
