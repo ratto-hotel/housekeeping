@@ -14,7 +14,7 @@
                                 <p class="text-primary m-0 font-weight-bold">{{ __('Edit external text') }}</p>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('external-texts.update', $text) }}" method="POST">
+                                <form method="POST">
                                     @method('PUT')
                                     @csrf
 
@@ -26,7 +26,7 @@
                                                     <strong>{{__('Key')}}</strong>
                                                 </label>
 
-                                                <x-form.input name="key" type="text" value="{{ $text->key }}" placeholder="{{ __('Key') }}"/>
+                                                <x-form.input name="key" type="text" value="{{ old('key') }}" placeholder="{{ __('Key') }}"/>
                                             </div>
                                         </div>
 
@@ -36,7 +36,7 @@
                                                     <strong>{{__('Value')}}</strong>
                                                 </label>
 
-                                                <x-form.input name="value" type="text" value="{{ $text->value }}" placeholder="{{ __('Value') }}"/>
+                                                <x-form.input name="value" type="text" value="{{ old('value') }}" placeholder="{{ __('Value') }}"/>
                                             </div>
                                         </div>
 
