@@ -1,6 +1,11 @@
 <x-layout.app>
     @push('title', 'External Texts')
 
+    <div class="container-fluid">
+        <h3 class="text-dark mb-4">{{ __('Manage external texts') }}</h3>
+
+        <x-messages.flash-messages/>
+
         <div class="card shadow">
             <div class="card-header py-3">
                 <p class="text-primary m-0 font-weight-bold">{{ __('External texts') }}</p>
