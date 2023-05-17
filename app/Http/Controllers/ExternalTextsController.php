@@ -24,7 +24,7 @@ class ExternalTextsController extends Controller
 
     public function create()
     {
-        return view('external-texts.index', [
+        return view('external-texts.create', [
             'text' => new ExternalText
         ]);
     }
