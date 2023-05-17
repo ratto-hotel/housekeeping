@@ -26,6 +26,9 @@ class ExternalTextsController extends Controller
 
     public function store(ExternalText $externalText, Request $request)
     {
+        $request->validate([
+            'value' => 'required'
+        ]);
         $externalText->update(["value" => $request->input('value')]);
         return to_route('external-texts.index')->with('success', 'The text has been updated!');
     }
