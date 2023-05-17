@@ -14,8 +14,8 @@
                     <div class="d-block d-md-flex">
                         <div class="col-12 col-lg-4">
                             <select class="form-control" name="sort_by">
-                                <option value="page_ids">{{__('Key')}}</option>
-                                <option value="parent_ids">{{__('Value')}}</option>
+                                <option value="key">{{__('Key')}}</option>
+                                <option value="value">{{__('Value')}}</option>
                             </select>
                         </div>
 
