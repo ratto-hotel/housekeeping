@@ -12,8 +12,8 @@ class ExternalTextsController extends Controller
     {
         $texts = ExternalText::query();
 
-        if ($request->input('search')) {
-            $texts = $texts->where($request->input('sort_by'), 'like', $request->input('sarch'));
+        if ($request->input('criteria')) {
+            $texts = $texts->where($request->input('sort_by'), 'like', $request->input('criteria'));
         }
 
         return view('external-texts.index', [
