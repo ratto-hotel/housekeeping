@@ -30,14 +30,6 @@
                         </div>
                     </div>
                 </form>
-
-                <form action="{{ route('catalog-pages.rcon-update') }}" method="POST" class="mr-2">
-                    @csrf
-
-                    <x-elements.danger-button>
-                        {{ __('Update catalog (RCON)') }}
-                    </x-elements.danger-button>
-                </form>
             </div>
         </div>
 
@@ -64,7 +56,11 @@
                                 <td>{{ $text->key }}</td>
                                 <td>{{ $text->value }}</td>
                                 <td>
-                                    <a href="{{route('external-texts.edit', $text)}}">{{__('Edit')}}</a>
+                                    <a href="{{route('external-texts.edit', $text)}}">
+                                        <x-elements.primary-button tooltip-text="{{ __('Edit text') }}">
+                                            <i class="fas fa-edit"></i>
+                                        </x-elements.primary-button>
+                                    </a>
                                     <form class="ml-2" action="{{ route('external-texts.delete', $text) }}"
                                           method="POST" onSubmit='confirmDelete("confirmBadgeDelete");'
                                           onSubmit="return confirm('{{ __('Are you sure you want to delete this badge?') }}');">
