@@ -61,28 +61,31 @@
                                 </td>
                                 <td>{{ __('badge_status.' . $badge->status) }}</td>
                                 <td>
-                                    @if ($badge->status === 'open')
-                                        <form class="ml-2" action="{{ route('manage-badges.accept', $badge) }}"
-                                              method="POST" onSubmit='confirmDelete("confirmBadgeAccept");'
-                                              onSubmit="return confirm('{{ __('Are you sure you want to accept this badge?') }}');">
-                                            @method('PUT')
+                                    <div class="btn-group" role="group">
+
+                                        @if ($badge->status === 'open')
+                                            <form class="ml-2" action="{{ route('manage-badges.accept', $badge) }}"
+                                                  method="POST" onSubmit='confirmDelete("confirmBadgeAccept");'
+                                                  onSubmit="return confirm('{{ __('Are you sure you want to accept this badge?') }}');">
+                                                @method('PUT')
+                                                @csrf
+
+                                                <x-elements.success-button tooltip-text="{{ __('Approve badge') }}">
+                                                    <i class="fas fa-check"></i>
+                                                </x-elements.success-button>
+                                            </form>
+                                        @endif
+                                        <form class="ml-2" action="{{ route('manage-badges.delete', $badge) }}"
+                                              method="POST" onSubmit='confirmDelete("confirmBadgeDelete");'
+                                              onSubmit="return confirm('{{ __('Are you sure you want to delete this badge?') }}');">
+                                            @method('DELETE')
                                             @csrf
 
-                                            <x-elements.success-button tooltip-text="{{ __('Approve badge') }}">
-                                                <i class="fas fa-check"></i>
-                                            </x-elements.success-button>
+                                            <x-elements.danger-button tooltip-text="{{ __('Delete badge') }}">
+                                                <i class="fas fa-trash"></i>
+                                            </x-elements.danger-button>
                                         </form>
-                                    @endif
-                                    <form class="ml-2" action="{{ route('manage-badges.delete', $badge) }}"
-                                          method="POST" onSubmit='confirmDelete("confirmBadgeDelete");'
-                                          onSubmit="return confirm('{{ __('Are you sure you want to delete this badge?') }}');">
-                                        @method('DELETE')
-                                        @csrf
-
-                                        <x-elements.danger-button tooltip-text="{{ __('Delete badge') }}">
-                                            <i class="fas fa-trash"></i>
-                                        </x-elements.danger-button>
-                                    </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
