@@ -11,7 +11,7 @@
                     <div class="col">
                         <div class="card shadow">
                             <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">{{ __('Edit external text') }}</p>
+                                <p class="text-primary m-0 font-weight-bold">{{ __('Create external text') }}</p>
                             </div>
                             <div class="card-body">
                                 <form action="{{route('external-texts.store')}}" method="POST">
