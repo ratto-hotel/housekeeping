@@ -27,6 +27,7 @@
                                 <td>{{ $text->key }}</td>
                                 <td>{{ $text->value }}</td>
                                 <td>
+                                    <a href="{{route('external-texts.edit', $text)}}">{{__('Edit')}}</a>
                                     <form class="ml-2" action="{{ route('external-texts.delete', $text) }}"
                                           method="POST" onSubmit='confirmDelete("confirmBadgeDelete");'
                                           onSubmit="return confirm('{{ __('Are you sure you want to delete this badge?') }}');">
