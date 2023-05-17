@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 class ExternalTextsController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        $texts = ExternalText::query();
+
+        if ($request->input('search')) {
+            $texts->where($request->input('sort_by'), 'like', $request->input('sarch'));
+        }
+
         return view('external-texts.index', [
-            'texts' => ExternalText::query()
-                ->orderByDesc('key')
+            'texts' => $texts->orderByDesc('key')
                 ->paginate(15)
         ]);
     }
