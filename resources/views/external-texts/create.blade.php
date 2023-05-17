@@ -15,7 +15,7 @@
                             </div>
                             <div class="card-body">
                                 <form action="{{route('external-texts.store')}}" method="POST">
-                                    @method('PUT')
+                                    @method('POST')
                                     @csrf
 
                                     <div class="form-row">
