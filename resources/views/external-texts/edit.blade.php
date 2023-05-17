@@ -14,7 +14,7 @@
                                 <p class="text-primary m-0 font-weight-bold">{{ __('Edit external text') }}</p>
                             </div>
                             <div class="card-body">
-                                <form action="{{route('external-texts.store', $text)}}" method="POST">
+                                <form action="{{route('external-texts.update', $text)}}" method="POST">
                                     @method('PUT')
                                     @csrf
 

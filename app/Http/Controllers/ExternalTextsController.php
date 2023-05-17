@@ -22,6 +22,13 @@ class ExternalTextsController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('external-texts.index', [
+            'text' => new ExternalText
+        ]);
+    }
+
     public function edit(ExternalText $externalText)
     {
         return view('external-texts.edit', [
@@ -29,12 +36,16 @@ class ExternalTextsController extends Controller
         ]);
     }
 
-    public function store(ExternalText $externalText, Request $request)
+    public function update(ExternalText $externalText, Request $request)
     {
         $request->validate([
+            'key' => 'required',
             'value' => 'required'
         ]);
-        $externalText->update(["value" => $request->input('value')]);
+        $externalText->update([
+            "key" => $request->input('key'),
+            "value" => $request->input('value')
+        ]);
         return to_route('external-texts.index')->with('success', 'The text has been updated!');
     }
 
@@ -45,7 +56,7 @@ class ExternalTextsController extends Controller
         return to_route('external-texts.index')->with('success', 'The text has been deleted!');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'key' => 'required',
