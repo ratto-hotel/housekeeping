@@ -19,7 +19,9 @@ class ExternalTextsController extends Controller
 
     public function edit(ExternalText $externalText)
     {
-        return view('external-texts.edit')->withInput($externalText);
+        return view('external-texts.edit', [
+            'text' => $externalText
+        ])->withInput();
     }
 
     public function update(ExternalText $externalText, Request $request)
