@@ -12,6 +12,7 @@ class ManageBadgesController extends Controller
     {
         return view('manage-badge.index', [
             'badges' => WebsiteBadge::query()
+                ->orderByAsc('status')
                 ->orderByDesc('id')
                 ->paginate(15)
         ]);
