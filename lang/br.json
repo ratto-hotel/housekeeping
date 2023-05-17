@@ -1,7 +1,25 @@
 {
     "Dashboard": "Painel de Controle",
-    "User Management": "Gerenciamento de Usuários",
+    "User Management": "Gerenciar Usuários",
     "Badges": "Emblemas",
     "Catalog": "Catálogo",
-    "In Game": "No Jogo"
+    "In Game": "No Jogo",
+    "Worldfilter Management": "Gerenciar Palavras Silenciadas",
+    "Staff Applications": "Vagas de Staff",
+    "Ban Management": "Gerenciar Bans",
+    "Chatlogs": "Log de Conversas",
+    "Room chatlogs": "Quartos",
+    "Private chatlogs": "Conversas Privadas",
+    "Website Settings": "Configurações do Site",
+    "Website IP whitelist": "IPs permitidos",
+    "Website IP blacklist": "IPs bloqueados",
+    "Article management": "Gerenciar Notícias",
+    "All Articles": "Todas as notícias",
+    "Create Article": "Criar notícia",
+    "Catalog pages": "Páginas do Catálogo",
+    "Emulator Settings": "Configurações do Emulador",
+    "Emulator Text": "Textos do emulador",
+    "External texts": "Textos externos (Nitro)",
+    "Miscellaneous": "Diversos",
+    "Activity Logs": "Log de Atividades"
 }
