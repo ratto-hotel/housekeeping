@@ -74,7 +74,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('external-texts')->group(function(){
         Route::get('/', [ExternalTextsController::class, 'index'])->name('external-texts.index');
-        Route::post('/create', [ExternalTextsController::class, 'store'])->name('external-texts.create');
+        Route::post('/create', [ExternalTextsController::class, 'create'])->name('external-texts.create');
         Route::get('/{externalText}', [ExternalTextsController::class, 'edit'])->name('external-texts.edit');
         Route::put('/{externalText}', [ExternalTextsController::class, 'update'])->name('external-texts.update');
         Route::delete('/{externalText}/delete', [ExternalTextsController::class, 'delete'])->name('external-texts.delete');
