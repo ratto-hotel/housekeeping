@@ -29,7 +29,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col mr-2">
                             <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
-                                <span>Users online</span>
+                                <span>{{__('Users online')}}</span>
                             </div>
                             <div class="text-dark font-weight-bold h5 mb-0">
                                 <span>{{ DB::table('users')->where('online', '1')->count() }}</span>
@@ -50,7 +50,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col mr-2">
                             <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                <span>Active rooms</span>
+                                <span>{{__('Active rooms')}}</span>
                             </div>
                             <div class="text-dark font-weight-bold h5 mb-0">
                                 <span>{{ DB::table('rooms')->where('users', '>', '0')->count() }}</span>
@@ -71,7 +71,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col mr-2">
                             <div class="text-uppercase text-duckets font-weight-bold text-xs mb-1">
-                                <span>Items in the catalogue</span>
+                                <span>{{__('Items in the catalogue')}}</span>
                             </div>
 
                             <div class="text-dark font-weight-bold h5 mb-0">

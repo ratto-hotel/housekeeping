@@ -281,7 +281,7 @@
                         method="GET" action="{{ route('users.search') }}">
                         <div class="input-group">
                             <input class="bg-light form-control border-0 small" type="text" name="username"
-                                   placeholder="Search for a username">
+                                   placeholder="{{__('Search for a username')}}">
 
                             <div class="input-group-append">
                                 <button class="btn btn-primary py-0" type="submit">
