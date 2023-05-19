@@ -15,8 +15,8 @@
                     <div class="d-block d-md-flex">
                         <div class="col-12 col-lg-4">
                             <select class="form-control" name="sort_by" value="{{old('sort_by', request()->get('sort_by'))}}">
-                                <option value="key">{{__('Key')}}</option>
-                                <option value="value">{{__('Value')}}</option>
+                                <option value="key" @selected(old('sort_by') == 'key')>{{__('Key')}}</option>
+                                <option value="value" @selected(old('sort_by') == 'value')>{{__('Value')}}</option>
                             </select>
                         </div>
 
