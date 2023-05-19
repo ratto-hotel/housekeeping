@@ -17,7 +17,8 @@ class ExternalTextsController extends Controller
         }
 
         return view('external-texts.index', [
-            'texts' => $texts->orderByDesc('key')
+            'texts' => $texts
+                ->orderByDesc('asc')
                 ->paginate(15)
         ]);
     }
