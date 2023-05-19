@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="row">
-                    {{ $texts->links() }}
+                    {{ $texts->withQueryString()->links() }}
                 </div>
             </div>
         </div>
