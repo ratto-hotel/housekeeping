@@ -14,15 +14,19 @@
                 <form action="{{ route('external-texts.index') }}" method="GET">
                     <div class="d-block d-md-flex">
                         <div class="col-12 col-lg-4">
-                            <select class="form-control" name="sort_by" value="{{old('sort_by', request()->get('sort_by'))}}">
-                                <option value="key" @selected(old('sort_by') == 'key')>{{__('Key')}}</option>
-                                <option value="value" @selected(old('sort_by') == 'value')>{{__('Value')}}</option>
+                            <select class="form-control" name="sort_by"
+                                    value="{{old('sort_by', request()->get('sort_by'))}}">
+                                <option
+                                    value="key" @selected(old('sort_by', request()->get('sort_by')) == 'key')>{{__('Key')}}</option>
+                                <option
+                                    value="value" @selected(old('sort_by', request()->get('sort_by')) == 'value')>{{__('Value')}}</option>
                             </select>
                         </div>
 
                         <div class="input-group col-12 col-lg-10">
                             <div class="form-outline">
-                                <input style="width: 300px;" type="search" name="criteria" value="{{old('criteria', request()->get('criteria'))}}"
+                                <input style="width: 300px;" type="search" name="criteria"
+                                       value="{{old('criteria', request()->get('criteria'))}}"
                                        placeholder="Enter your search criteria" class="form-control">
                             </div>
 
