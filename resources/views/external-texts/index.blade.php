@@ -14,7 +14,7 @@
                 <form action="{{ route('external-texts.index') }}" method="GET">
                     <div class="d-block d-md-flex">
                         <div class="col-12 col-lg-4">
-                            <select class="form-control" name="sort_by">
+                            <select class="form-control" name="sort_by" value="{{old('key')}}">
                                 <option value="key">{{__('Key')}}</option>
                                 <option value="value">{{__('Value')}}</option>
                             </select>
@@ -22,7 +22,7 @@
 
                         <div class="input-group col-12 col-lg-10">
                             <div class="form-outline">
-                                <input style="width: 300px;" type="search" name="criteria"
+                                <input style="width: 300px;" type="search" name="criteria" value="{{old('criteria')}}"
                                        placeholder="Enter your search criteria" class="form-control">
                             </div>
 
